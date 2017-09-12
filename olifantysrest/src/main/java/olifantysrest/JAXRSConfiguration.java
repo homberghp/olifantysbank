@@ -9,7 +9,7 @@ import javax.ws.rs.core.Application;
  *
  * @author airhacks.com
  */
-@ApplicationPath("")
+@ApplicationPath("/rest")
 public class JAXRSConfiguration extends Application {
 
 }

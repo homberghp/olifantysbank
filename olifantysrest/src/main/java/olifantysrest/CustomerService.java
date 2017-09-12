@@ -20,7 +20,7 @@ import jsonutil.JSONQueryService;
  * @author Pieter van den Hombergh {@code <p.vandenhombergh@fontys.nl>}
  */
 @Stateless
-@Path( "customer" )
+@Path( "/customer" )
 public class CustomerService {
 
     @Resource( lookup = "jndi:jdbc/olifantys" )

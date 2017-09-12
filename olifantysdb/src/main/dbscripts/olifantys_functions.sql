@@ -126,6 +126,10 @@ BEGIN
 	INSERT INTO account (customerid,balance,astate,accountdescription)
     	VALUES (custid,initialbalance,initialstate,description ) returning * into rec ;
     END IF;
+    IF initialbalance > 0 then
+       
+       perform transferflockfree(99999999,rec.accountid,initialbalance, 'opening deposit');
+    END IF;
 return rec;
 END;
 $createaccountf$;
