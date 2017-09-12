@@ -1,0 +1,19 @@
+CREATE OR REPLACE FUNTION transfer_jsonb( job jsonb) RETURNS jsonb
+LANGUAGE plpgsql
+as $transfer_jsonb$
+DECLARE
+  toa integer;
+  froma integer;
+  amount numeric;
+  description text;
+  rs my_transactions;
+BEGIN
+	toa := job->>'toa'::integer;
+	froma := job->>'froma'::integer;
+	amount:= job->>'amount'::numeric;
+	description := job->>'description'::text;
+  select * from transferv(froma,toa,amount,description) into rs;
+  return to_jsonb(rs); 
+	
+
+END $transfer_jsonb$

@@ -1,0 +1,11 @@
+= KISS
+
+* Database access using DAO/DTO model.
+* Mapping done with factory method, used as a method reference.
+* Where frontend does simple crud, database may speak json(b) in both
+  directions. (Insert/update/delete and get)
+* _questionable_ The return type of all CRUD method is a JSON array, even where only
+  one element is expected. The 'overhead' is '[' +']', which is
+  acceptable. Better stick to REST conventions.
+* DELETE returns an empty array, status code 200.
+* INSERT returns array containing the inserted element and 
