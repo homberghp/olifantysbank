@@ -1,2 +1,6 @@
-**/target
+*/target/
+*.class
 
+olifantysrest/target
+olifantysfxclient/target
+olifantysdb/target
